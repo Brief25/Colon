@@ -235,6 +235,7 @@ footer{
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <ul id="menu">
         <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+         <li><a href="#notifications" onclick="toggleMenu()">Notifications</a></li>
         <li><a href="#pricing" onclick="toggleMenu()">Pricing</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
     </ul>
@@ -384,6 +385,57 @@ footer{
     </div>
 </section>
 
+<!-- NOTIFICATIONS -->
+<section id="notifications">
+    <div class="section-title">
+        <h2>Latest <span>Notifications</span></h2>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Form / Notice</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Description</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>RRB NTPC Online Form 2025</td>
+                <td>10 Jan 2025</td>
+                <td>15 Feb 2025</td>
+                <td>Railway NTPC recruitment online application</td>
+                <td style="color:green;font-weight:bold;">Active</td>
+            </tr>
+
+            <tr>
+                <td>SSC GD Constable</td>
+                <td>05 Jan 2025</td>
+                <td>31 Jan 2025</td>
+                <td>SSC GD Constable exam form</td>
+                <td style="color:green;font-weight:bold;">Active</td>
+            </tr>
+
+            <tr>
+                <td>Voter Id Update</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Voter Name, address & mobile etc. update service</td>
+                <td style="color:orange;font-weight:bold;">Open</td>
+            </tr>
+
+            <tr>
+                <td>Income Certificate</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Online income certificate application</td>
+                <td style="color:blue;font-weight:bold;">Available</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
 <section class="counter-section">
     <div class="counter"><h3 id="exp">0</h3><p>Years Experience</p></div>
     <div class="counter"><h3 id="clients">0</h3><p>Happy Clients</p></div>
@@ -393,10 +445,11 @@ footer{
 <section id="contact">
     <div class="section-title"><h2>Contact <span>Us</span></h2></div>
     <div class="contact">
-        <form>
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea rows="5" placeholder="Message"></textarea>
+        <form  id="contact-form">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="tel"  name="phone" placeholder="Contact Number" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea rows="5" name="message" placeholder="Message"></textarea>
             <button>Send Message</button>
         </form>
         <div>
@@ -454,6 +507,12 @@ tables.forEach(table => {
 });
 
 </script>
+
+<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<!-- Your External JS File -->
+<script src="js/email.js"></script>
+
 
 </body>
 </html>
