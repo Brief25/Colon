@@ -225,6 +225,40 @@ footer{
     .menu-icon{display:block;}
 }
 
+
+/* TOAST NOTIFICATION */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    min-width: 280px;
+    max-width: 360px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.35s ease;
+    z-index: 9999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.success {
+    background: linear-gradient(135deg, #28a745, #218838);
+}
+
+.toast.error {
+    background: linear-gradient(135deg, #dc3545, #b02a37);
+}
+
+
 </style>
 </head>
 
@@ -444,8 +478,8 @@ footer{
 
 <section id="contact">
     <div class="section-title"><h2>Contact <span>Us</span></h2></div>
-    <div class="contact">
-        <form  id="contact-form" method="post">
+    <div class="contact" method="post">
+        <form  id="contact-form">
             <input type="text" name="name" placeholder="Name" required>
             <input type="tel"  name="phone" placeholder="Contact Number" required>
             <input type="email" name="email" placeholder="Email" required>
@@ -514,7 +548,7 @@ tables.forEach(table => {
 <script>
     // Initialize EmailJS
 (function () {
-    emailjs.init("V_uftsdRQOQdfsLPe"); // Public Key from EmailJS
+    emailjs.init("V_uftsdRQOQdfsLPe"); // Public Key from EmailJS  V_uftsdRQOQdfsLPe
 })();
 
 // Wait for DOM to load
@@ -532,12 +566,12 @@ document.addEventListener("DOMContentLoaded", function () {
             "template_dt0ux1g",  // EmailJS template ID
             form
         ).then(
-            function () {
-                alert("✅ Message sent successfully! We will contact you soon.");
+           function () {
+                showToast("✅ Message sent successfully! We will contact you soon.", "success");
                 form.reset();
             },
             function (error) {
-                alert("❌ Failed to send message. Please try again.");
+                showToast("❌ Failed to send message. Please try again.", "error");
                 console.error("EmailJS Error:", error);
             }
         );
@@ -547,7 +581,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
+<!-- Toast Notification -->
+<div id="toast" class="toast"></div>
 
+<script>
+function showToast(message, type = "success") {
+    const toast = document.getElementById("toast");
+
+    toast.textContent = message;
+    toast.className = `toast show ${type}`;
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+}
+</script>
 
 </body>
 </html>
