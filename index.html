@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Colon : The Computer Care Choice Centre | PDF, Word & Website Services</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Computer Care Choice Centre offers PDF editing, Word typing, online form filling and website design services in India. Trusted, fast and affordable.">
+<meta name="keywords" content="PDF editing, word typing, choice centre, online form filling, website design India">
+<meta name="author" content="Colon : The Computer Care Choice Centre">
+<meta name="robots" content="index, follow">
+
+<style>
+:root {
+    --orange:#ff7a18;
+    --dark:#222;
+    --gray:#666;
+    --white:#fff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f9f9f9;
+    color:var(--dark);
+}
+
+/* NAVBAR */
+nav{
+    background:#fff;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+nav h1{color:var(--orange);}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:bold;
+}
+
+.menu-icon{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    padding:80px 8%;
+    background:linear-gradient(120deg,#fff,#fff3e8);
+    text-align:center;
+}
+
+.hero h2{font-size:40px;}
+.hero span{color:var(--orange);}
+.hero p{
+    margin:20px auto;
+    max-width:700px;
+    color:var(--gray);
+}
+
+.hero button{
+    padding:12px 25px;
+    border:none;
+    background:var(--orange);
+    color:#fff;
+    font-size:16px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* SECTION */
+section{padding:70px 8%;}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title span{color:var(--orange);}
+
+/* TABLE */
+.table-container{
+    overflow-x:auto;
+    background:#fff;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:600px;
+}
+
+/* Hover effect */
+table tr:hover {
+    background-color: #ffe0b3; /* Light orange */
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Selected row */
+table tr.selected {
+    background-color: #ffcc80; /* Darker orange */
+}
+
+/* Hover on selected row (optional: slightly lighter) */
+table tr.selected:hover {
+    background-color: #ffd699; 
+}
+
+
+
+th, td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:left;
+}
+
+th{
+    background:var(--orange);
+    color:#fff;
+}
+
+tr:nth-child(even){
+    background:#f9f9f9;
+}
+
+/* COUNTERS */
+.counter-section{
+    background:var(--orange);
+    color:#fff;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    text-align:center;
+}
+
+.counter{
+    padding:40px;
+}
+
+.counter h3{font-size:38px;}
+
+/* CONTACT */
+.contact{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.contact input,
+.contact textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:5px;
+}
+
+.contact button{
+    background:var(--orange);
+    color:#fff;
+    border:none;
+    padding:12px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:#ccc;
+    text-align:center;
+    padding:25px;
+}
+
+/* WHATSAPP */
+.whatsapp-float{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#25D366;
+    color:#fff;
+    font-size:26px;
+    padding:15px 18px;
+    border-radius: 50%;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    nav ul{
+        position:absolute;
+        top:65px;
+        right:0;
+        background:#fff;
+        width:200px;
+        flex-direction:column;
+        padding:20px;
+        display:none;
+        box-shadow:0 5px 20px rgba(0,0,0,.1);
+    }
+    .menu-icon{display:block;}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>Colon</h1>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+        <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+        <li><a href="#pricing" onclick="toggleMenu()">Pricing</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+    <h2>Trusted <span>Computer & Digital</span> Services</h2>
+    <p>PDF editing, Word typing, online form filling & website development with fast and reliable service.</p>
+    <button onclick="location.href='#contact'">Get Service Now</button>
+</div>
+
+<!-- SERVICES TABLE -->
+<section id="services">
+    <div class="section-title"><h2>Our <span>Services</span></h2></div>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Service Category</th>
+                <th>Service Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Document</td>
+                <td>PDF Editing</td>
+                <td>Edit, merge, split, compress, convert PDF files</td>
+            </tr>
+            <tr>
+                <td>Design</td>
+                <td>Format Design</td>
+                <td>Word, Excel, PowerPoint, Email signature design</td>
+            </tr>
+            <tr>
+                <td>Typing</td>
+                <td>Word Typing</td>
+                <td>Accurate typing, resumes, projects, assignments</td>
+            </tr>
+            <tr>
+                <td>Online</td>
+                <td>Form Filling</td>
+                <td>Government, exam & job application forms</td>
+            </tr>
+            <tr>
+                <td>Web</td>
+                <td>Website Design</td>
+                <td>Static & Dynamic responsive websites development</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- PRICING TABLE -->
+<section id="pricing">
+    <div class="section-title"><h2>Pricing <span>List</span></h2></div>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Service</th>
+                <th>Work Type</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>PDF</td>
+                <td>PDF Editing</td>
+                <td>₹50 / page</td>
+            </tr>
+            <tr>
+                <td>PDF</td>
+                <td>PDF to Word</td>
+                <td>₹10 / page</td>
+            </tr>
+            <tr>
+                <td>Typing</td>
+                <td>English Typing</td>
+                <td>₹15 / page</td>
+            </tr>
+            <tr>
+                <td>Typing</td>
+                <td>Resume / CV</td>
+                <td>₹150</td>
+            </tr>
+            <tr>
+                <td>Online</td>
+                <td>Govt / Exam Forms</td>
+                <td>₹50 – ₹100</td>
+            </tr>
+            <tr>
+                <td>Website</td>
+                <td>Single Page Website</td>
+                <td>₹2,000+</td>
+            </tr>
+            <tr>
+                <td>Word Design</td>
+                <td>Word Format Design (Basic)</td>
+                <td>₹100 – ₹200</td>
+            </tr>
+            <tr>
+                <td>Word Design</td>
+                <td>Word Format Design (Professional)</td>
+                <td>₹300 – ₹700</td>
+            </tr>
+            <tr>
+                <td>Excel Design</td>
+                <td>Excel Format Design (Simple)</td>
+                <td>₹200 – ₹400</td>
+            </tr>
+            <tr>
+                <td>Excel Design</td>
+                <td>Invoice / Billing Format (Excel)</td>
+                <td>₹400 – ₹800</td>
+            </tr>
+            <tr>
+                <td>Excel Design</td>
+                <td>Excel Template with Formula</td>
+                <td>₹600 – ₹1,200</td>
+            </tr>
+            <tr>
+                <td>PowerPoint Design</td>
+                <td>PowerPoint Slides (Up to 10)</td>
+                <td>₹300 – ₹600</td>
+            </tr>
+            <tr>
+                <td>PowerPoint Design</td>
+                <td>Professional Presentation (10–15 Slides)</td>
+                <td>₹800 – ₹1,500</td>
+            </tr>
+            <tr>
+                <td>Email Design</td>
+                <td>Email Signature (Text)</td>
+                <td>₹150 – ₹300</td>
+            </tr>
+            <tr>
+                <td>Email Design</td>
+                <td>Professional Email Signature (HTML)</td>
+                <td>₹400 – ₹1,000</td>
+            </tr>
+            <tr>
+                <td>Email Design</td>
+                <td>Email Signature Setup</td>
+                <td>₹200 – ₹400</td>
+            </tr>
+            <tr>
+                <td>Design</td>
+                <td>Urgent Work / Same Day</td>
+                <td>+30% Extra</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section class="counter-section">
+    <div class="counter"><h3 id="exp">0</h3><p>Years Experience</p></div>
+    <div class="counter"><h3 id="clients">0</h3><p>Happy Clients</p></div>
+    <div class="counter"><h3 id="projects">0</h3><p>Completed Works</p></div>
+</section>
+
+<section id="contact">
+    <div class="section-title"><h2>Contact <span>Us</span></h2></div>
+    <div class="contact">
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea rows="5" placeholder="Message"></textarea>
+            <button>Send Message</button>
+        </form>
+        <div>
+            <h3>Office Address</h3>
+            <p style="padding: 5px 0;"><b>Colon :</b> The Computer Care Choice Centre, India</p>
+            <p style="padding: 5px 0;">📧 Email:<a style="text-decoration: none; color: #111;" href="mailto:dev.virendrakhare@gmail.com" target="_blank">dev.virendrakhare@gmail.com</a></p>
+            <p style="padding: 5px 0;">💬 Phone:<a style="text-decoration: none; color: #111;" href="https://wa.me/919691095539?text=Hello%20I%20need%20your%20services" target="_blank">+91 9691095539</a></p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Colon The Computer Care Choice Centre | Trusted Digital Services
+</footer>
+
+<a href="https://wa.me/919691095539?text=Hello%20I%20need%20your%20services"
+   class="whatsapp-float" target="_blank">💬</a>
+
+<script>
+function toggleMenu(){
+    let menu=document.getElementById("menu");
+    menu.style.display = menu.style.display==="flex"?"none":"flex";
+}
+
+function animate(id,target){
+    let c=0;
+    let i=setInterval(()=>{
+        c++;
+        document.getElementById(id).innerText=c;
+        if(c>=target) clearInterval(i);
+    },30);
+}
+
+animate("exp",5);
+animate("clients",350);
+animate("projects",500);
+</script>
+
+<script>
+// Highlight clicked row (selection)
+const tables = document.querySelectorAll("table");
+tables.forEach(table => {
+    table.querySelectorAll("tr").forEach(row => {
+        row.addEventListener("click", () => {
+            // Skip header row
+            if(row.querySelectorAll("th").length > 0) return;
+            
+            // Remove 'selected' from other rows
+            table.querySelectorAll("tr").forEach(r => r.classList.remove("selected"));
+            
+            // Add 'selected' class to clicked row
+            row.classList.add("selected");
+        });
+    });
+});
+
+</script>
+
+</body>
+</html>
