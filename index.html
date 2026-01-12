@@ -259,13 +259,6 @@ footer{
 }
 
 
-
-.counter{
-      font-size:120px;
-      font-weight:bold;
-      color:#38bdf8;
-}
-
 </style>
 </head>
 
@@ -502,7 +495,6 @@ footer{
     </div>
 </section>
 
-<div class="counter" id="count">1</div>
 
 <footer>
     © 2025 Colon The Computer Care Choice Centre | Trusted Digital Services
@@ -606,25 +598,6 @@ function showToast(message, type = "success") {
 }
 </script>
 
-
-  <script>
-    let num = 1;
-    const counter = document.getElementById("count");
-
-    function startCounting(){
-      counter.textContent = num;
-
-      num++;
-
-      // when 100 reached restart to 1
-      if(num > 100){
-        num = 1;
-      }
-    }
-
-    // update every 300ms (you can change speed)
-    setInterval(startCounting, 300);
-  </script>
 
 
 </body>
