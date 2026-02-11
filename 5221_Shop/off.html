@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>CloudNova — Page Temporarily Unavailable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --accent:#ff7a18;
+      --accent-2:#28c76f;
+      --muted:#6b7280;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      background:linear-gradient(180deg,#fff 0%, var(--bg) 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      color:#0f172a;
+    }
+
+    .container{
+      width:100%;
+      max-width:1100px;
+      background:var(--card);
+      border-radius:18px;
+      padding:36px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.08);
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:28px;
+      align-items:center;
+    }
+
+    @media (max-width:900px){
+      .container{grid-template-columns:1fr}
+    }
+
+    .brand{
+      font-weight:800;
+      font-size:22px;
+      color:var(--accent);
+      margin-bottom:10px;
+    }
+
+    h1{
+      margin:10px 0;
+      font-size:30px;
+    }
+
+    p{
+      color:var(--muted);
+      line-height:1.6;
+      margin-bottom:20px;
+    }
+
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(40,199,111,.1);
+      font-weight:700;
+      color:var(--accent-2);
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#ff4d4f;
+    }
+
+    .controls{
+      display:flex;
+      gap:12px;
+      margin-top:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border:0;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:var(--accent);
+      color:white;
+    }
+
+    .btn-ghost{
+      background:#f1f5f9;
+      color:#0f172a;
+    }
+
+    .meta{
+      margin-top:20px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .countdown{
+      font-weight:800;
+      color:var(--accent);
+    }
+
+    .card{
+      background:#f8fafc;
+      border-radius:14px;
+      padding:20px;
+    }
+
+    .small{
+      font-size:13px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+    <section>
+      <div class="brand">Murn_Help Security</div>
+
+      <div class="status">
+        <span class="dot"></span> Service Offline
+      </div>
+
+      <h1>This page is taking a short break 🚧</h1>
+
+      <p>
+        Don’t worry — our engineers are already fixing this issue.
+        The service will be restored very shortly. Thank you for your patience.
+      </p>
+
+      <div class="controls">
+        <button class="btn btn-primary" id="retryBtn">Try Again</button>
+        <button class="btn btn-ghost" id="homeBtn">Go Home</button>
+      </div>
+
+      <div class="meta">
+        Auto redirect in <span class="countdown" id="countdown">10</span> seconds <br>
+        Error reference: <strong id="ref">—</strong>
+      </div>
+    </section>
+
+    <aside>
+      <div class="card">
+        <strong>System Status</strong>
+        <div id="statusMsg">Checking service availability...</div>
+        <div class="small" id="lastCheck">Last checked: —</div>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    const retryBtn = document.getElementById('retryBtn');
+    const homeBtn = document.getElementById('homeBtn');
+    const statusMsg = document.getElementById('statusMsg');
+    const lastCheck = document.getElementById('lastCheck');
+    const refEl = document.getElementById('ref');
+    const countdownEl = document.getElementById('countdown');
+
+    // Random error reference
+    refEl.textContent = 'CN-' + Math.random().toString(36).slice(2,7).toUpperCase();
+
+    function checkStatus(){
+      statusMsg.textContent = 'Checking service availability...';
+      setTimeout(()=>{
+        const ok = Math.random() > 0.6;
+        statusMsg.textContent = ok ? '✅ All systems operational' : '❌ Still unavailable';
+        lastCheck.textContent = 'Last checked: ' + new Date().toLocaleTimeString();
+      }, 1200);
+    }
+
+    retryBtn.addEventListener('click', checkStatus);
+
+    homeBtn.addEventListener('click', () => {
+      window.location.href = '../index.html';
+    });
+
+    // Auto redirect countdown
+    let timeLeft = 10;
+    setInterval(()=>{
+      timeLeft--;
+      countdownEl.textContent = timeLeft;
+      if(timeLeft <= 0){
+        window.location.href = '../index.html';
+      }
+    },1000);
+
+    // Initial check
+    checkStatus();
+  </script>
+
+</body>
+</html>
