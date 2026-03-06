@@ -176,7 +176,7 @@
     });
 
     // Newsletter
-    /*document.getElementById('newsletterForm').addEventListener('submit', async (e)=>{
+    document.getElementById('newsletterForm').addEventListener('submit', async (e)=>{
       e.preventDefault();
       const email = document.getElementById('newsletterEmail').value.trim();
       if(!email) return;
@@ -188,7 +188,7 @@
         console.error(err);
         notify('Subscription failed');
       }
-    });*/
+    });
 
     // Drawer + Search
     document.getElementById('openCart').onclick = ()=> cartDrawer.classList.add('open');
@@ -202,3 +202,4 @@
     renderGrid();
     updateCartUI();
     document.getElementById('year').textContent = new Date().getFullYear();
+
